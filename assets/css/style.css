@@ -12,7 +12,7 @@
         "footer";
         grid-template-rows: 50px 70px 1fr 60px;
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
 }
 
 nav{
@@ -35,6 +35,10 @@ nav img{
     width: 30px;
 }
 
+nav .lista{
+    display: none;
+}
+
 section{
     grid-area: section;
     background-color: #e2e2e2;
@@ -45,7 +49,7 @@ section{
 }
 
 section select{
-    width: 280px;
+    width: 95%;
     height: 35px;
     padding: 5px;
     border: none;
@@ -98,7 +102,7 @@ main .navigation button{
 }
 footer{
     grid-area: footer;
-    background-color: #00579c;
+    background-color: #012F6B;
     color: white;
     display: flex;
     flex-direction: column;
@@ -108,4 +112,39 @@ footer{
 
 footer img{
     width: 20px;
+}
+
+@media (min-width: 576px){
+    .container{
+        grid-template-areas: 
+            "nav section"
+            "nav main"
+            "footer main"
+        ;
+        grid-template-columns: 240px 1fr;
+        grid-template-rows: 70px 1fr 60px;
+    }
+
+    main .cards{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    nav{
+        flex-direction: column;
+        justify-content: start;
+
+    }
+
+    nav .menu{
+        display: none;
+    }
+
+    nav .logo-container{
+        padding: 20px;
+    }
+
+    nav .lista{
+        display: block;
+    }
 }
